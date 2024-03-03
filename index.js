@@ -1,34 +1,34 @@
 const result = document.querySelector('.result');
 
 function getComputerChoice() {
-    choices = ['Rock', 'Paper', 'Scissors']
-    randomChoice = Math.floor(Math.random() * choices.length)
-    return choices[randomChoice]
+    choices = ['Rock', 'Paper', 'Scissors'];
+    randomChoice = Math.floor(Math.random() * choices.length);
+    return choices[randomChoice];
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection.toLowerCase()
+    let word = playerSelection.toLowerCase();
 
     if (computerSelection === 'Rock') {
-        if (playerSelection === 'paper') {
+        if (word === 'paper') {
             return 'You WIN!';
-        } else if (playerSelection === 'scissors') {
+        } else if (word === 'scissors') {
             return 'You LOSE!';
-        } else if (playerSelection === 'rock') {
+        } else if (word === 'rock') {
             return 'TIE!';
         }
     } else if (computerSelection === 'Paper') {
-        if (playerSelection === 'paper') {
+        if (word === 'paper') {
             return'TIE!';
-        } else if (playerSelection === 'scissors') {
+        } else if (word === 'scissors') {
             return 'You WIN!';
-        } else if (playerSelection === 'rock') {
+        } else if (word === 'rock') {
             return 'You LOSE!';
         }
     } else if (computerSelection === 'Scissors') {
-        if (playerSelection === 'paper') {
+        if (word === 'paper') {
             return 'You LOSE!';
-        } else if (playerSelection === 'scissors') {
+        } else if (word === 'scissors') {
             return 'TIE!';
         } else if (playerSelection === 'rock') {
             return 'You WIN!';
