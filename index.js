@@ -1,4 +1,5 @@
-const result = document.querySelector('.result');
+let playerWins = 0;
+let computerWins = 0;
 
 function getComputerChoice() {
     choices = ['Rock', 'Paper', 'Scissors'];
@@ -11,8 +12,10 @@ function playRound(playerSelection, computerSelection) {
 
     if (computerSelection === 'Rock') {
         if (word === 'paper') {
+            playerWins++;
             return 'You WIN!';
         } else if (word === 'scissors') {
+            computerWins++;
             return 'You LOSE!';
         } else if (word === 'rock') {
             return 'TIE!';
@@ -21,16 +24,20 @@ function playRound(playerSelection, computerSelection) {
         if (word === 'paper') {
             return'TIE!';
         } else if (word === 'scissors') {
+            playerWins++;
             return 'You WIN!';
         } else if (word === 'rock') {
+            computerWins++;
             return 'You LOSE!';
         }
     } else if (computerSelection === 'Scissors') {
         if (word === 'paper') {
+            computerWins++;
             return 'You LOSE!';
         } else if (word === 'scissors') {
             return 'TIE!';
         } else if (playerSelection === 'rock') {
+            playerWins++;
             return 'You WIN!';
         }
     }
@@ -41,6 +48,13 @@ function playGame() {
         playerSelection = prompt('Enter rock, paper, or scissors:');
         let computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
+    }
+    if (playerWins > computerWins) {
+        console.log('You BEAT THE COMPUTER');
+    } else if (computerWins == playerWins) {
+        console.log('You guys tied...')
+    } else {
+        console.log('The computer wins... what da frick man')
     }
 }
 
