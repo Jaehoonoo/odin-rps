@@ -36,6 +36,12 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let playerSelection = prompt('Enter rock, paper, or scissors:');
-let computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        playerSelection = prompt('Enter rock, paper, or scissors:');
+        let computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+playGame();
