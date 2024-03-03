@@ -53,7 +53,7 @@ function playGame() {
         console.log('You BEAT THE COMPUTER');
     } else if (computerWins == playerWins) {
         console.log('You guys tied...')
-    } else {
+    } else if (playerWins < computerWins) {
         console.log('The computer wins... what da frick man')
     }
 }
